@@ -1,0 +1,26 @@
+question_id,question,question_theme,complexity_label
+1,How many datasources are available in  the environment?,Development,1
+2,What is the Vineland V-score for coping skills  for patient BU044?,Development,2
+3,What is the standard deviation across all patients  for the Vineland  V-score for the Vineland  receptive communication scale?,Development,3
+4,"How many unique children have a Vineland V-score in the communication domain of <85, how many have a T-score in PROM depressive complaints of <40), and how many have both?",Development,4
+5,"If a patient has a Vineland social adaptive score between 85 and 115, what is the chance that he/she scores >70 on SRS t-score and/or >0 on the RBS total score?",Development,5
+6,How many different PROM questionnaires are recorded in the dataset?,PROMs,1
+7,When did BU002 fill his/her last PROM cognitive functioning  questionnaire?,PROMs,2
+8,How many unique patients have reported PROMs depressive complaints with a  T-score of less than 40?,PROMs,3
+9,"What percentage of children do not have a PROMs cognitive functioning questionnaire filled out and are older than 15 years old (on July 29, 2025)?",PROMs,4
+10,"If the Vineland communication scale is less than 85, what is the chance of improving the PROMs cognitive functioning with 10 over a period of 6 months?",PROMs,5
+11,What data source contains the most amount of information (KBs)?,Lab,1
+12,How many times did patient BU002 have his/her Potassium  measured in the blood?,Lab,2
+13,What percentage of patients show a Potassium measured  of less than 3.5 mml/l at any point in time?,Lab,3
+14,What percentage of unique patients that have a Potassium measured  below 3.5 mml/l at any point in time are below 15 years old?,Lab,4
+15,"What is the age distribution of children with Potassium measured smaller than 3.5 mml/l and a PROM  fatigue T-score between 40 and 60 (on July 29, 2025)?",Lab,5
+16,How large is my data sample (in KBs)?,Demographics,1
+17,How many demographic variables are available in my data sample?,Demographics,2
+18,"What is the age distribution of all patients on march 21 , 2025?",Demographics,3
+19,What percentage of unique children with a raw vineland adaptive score between 85 and 115 are girls and how many are boys?,Demographics,4
+20,"For  children who  filled out the PROMs angst questionnaire, what percentage were female and what was the most common age for males?",Demographics,5
+21,How many patients are in my dataset?,Diagnosis,1
+22,How many children have autism?,Diagnosis,2
+23,What percentage of children had their PROMs filled out by their father?,Diagnosis,3
+24,What percentage of children that have autism had their PROMs filled out by their mother?,Diagnosis,4
+25,"What percentage of children that have autism had either PROMs, RBS or SRS filled out by their father?",Diagnosis,5

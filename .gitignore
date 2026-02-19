@@ -1,0 +1,21 @@
+#virtual environments
+venv/
+venv_test/
+buddi_project_test/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+#Generated data
+data/processed/
+outputs/
+archive/
+
+# Local environment files
+.env

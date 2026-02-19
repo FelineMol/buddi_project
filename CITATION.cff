@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: "Quantifying the Benefits of Data Interoperability for LLM-Based Agents on Neurodevelopmental Trial Data"
+message: "If you use this code, please cite the associated manuscript."
+type: software
+authors:
+  - family-names: "Mollerus"
+    given-names: "Féline"
+    affiliation: "Amsterdam UMC"
+    orcid: "https://orcid.org/0009-0000-5153-6540"
+  - family-names: "Mooren"
+    given-names: "Tim"
+    affiliation: "Accenture"
+  - family-names: "Geertjens"
+    given-names: "Lisa"
+    affiliation: "Amsterdam UMC"
+  - family-names: "Bruining"
+    given-names: "Hilgo"
+    affiliation: "Amsterdam UMC"
+repository-code: "https://github.com/felinemol/buddi_project"
+url: "https://github.com/felinemol/buddi_project"
+license: "MIT"
+version: "v1.0.0"
+date-released: 2026-02-19
+
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Mollerus"
+    given-names: "Féline"
+  - family-names: "Mooren"
+    given-names: "Tim"
+  - family-names: "Geertjens"
+    given-names: "Lisa"
+  - family-names: "Bruining"
+    given-names: "Hilgo"
+  title: "Quantifying the Benefits of Data Interoperability for LLM-Based Agents on Neurodevelopmental Trial Data"
+  journal: "[After publication: IEEE Journal of Biomedical and Health Informatics]"
+  year: 2026
+  doi: "[Insert DOI after publication]"

@@ -1,0 +1,76 @@
+﻿Questionid,Datum,Dataset,Question Theme,Complexity Level,Correct2,Token count,Time to first token (ms),Structural assumption,Correct datasource/column,Semantic assumption,Correct interpretation field,Error Reason,Explanation error
+1,30-Oct,Semantic,Development,General,Yes,13601,1816,No,N/A,No,N/A,N/A,
+2,30-Oct,Semantic,Development,Direct Factual,Yes,21292,630,No,Yes,No,Yes,N/A,
+3,30-Oct,Semantic,Development,Direct Analytical,Yes,36170,1086,No,Yes,No,Yes,N/A,
+4,30-Oct,Semantic,Development,Multi-Step Analytical,Yes,68603,3456,No,Yes,Yes,Yes,N/A,Assumed `value_type='ruw'` indicates raw scores in Vineland data. Also assumed `'PROM_PROM_angst_Tscore'` represents the depressive complaints T-score for PROM.
+5,30-Oct,Semantic,Development,Advanced Analytical,Yes,101227,994,No,Yes,Yes,Yes,N/A,Assumed social adaptive = AV
+6,30-Oct,Semantic,PROMs,General,Yes,13931,3443,No,Yes,No,Yes,N/A,
+7,30-Oct,Semantic,PROMs,Direct Factual,Yes,22842,1113,No,Yes,Yes,Yes,N/A,"Yes — Assumed that the substring 'cognitief_functioneren' identifies the ""cognitive functioning"" questionnaire."
+8,30-Oct,Semantic,PROMs,Direct Analytical,Yes,37066,980,No,Yes,Yes,Yes,N/A,T-scores are represented under `item.item.answer.valueDecimal` for the `depressieve_klachten` PROM questionnaire.
+9,30-Oct,Semantic,PROMs,Multi-Step Analytical,Yes,65143,3282,No,Yes,Yes,Yes,N/A,"Yes — interpreted `http://aumc.com/fhir/questionnaire/prom/depressieve_klachten` as ""depressive complaints"" PROM questionnaire.\n\nThis means 1 out of 5 patients in the dataset both meet the age requirement (>15 years) and have the PROMs for depressive complaints completed.'}"
+10,30-Oct,Semantic,PROMs,Advanced Analytical,No,166012,3435,Yes,No,Yes,N/A,Structural,Unable to define correct steps to calculate the improvement over a period of 6 months. Incorrectly defining authored field as improvement time
+11,30-Oct,Semantic,Lab,General,Yes,14162,1138,No,N/A,No,N/A,N/A,
+12,30-Oct,Semantic,Lab,Direct Factual,Yes,71258,1470,No,Yes,No,Yes,N/A,
+13,30-Oct,Semantic,Lab,Direct Analytical,Yes,112948,1307,No,Yes,No,Yes,N/A,"Other values like ""Urine potassium level"" are excluded as they do not match the query intent. "
+14,30-Oct,Semantic,Lab,Multi-Step Analytical,Yes,138819,3677,No,Yes,No,Yes,N/A,
+15,30-Oct,Semantic,Lab,Advanced Analytical,Yes,112416,1043,No,Yes,No,Yes,N/A,
+16,30-Oct,Semantic,Demographics,General,Yes,15467,3629,No,N/A,No,N/A,N/A,
+17,30-Oct,Semantic,Demographics,Direct Factual,Yes,14231,1051,No,Yes,Yes,Yes,N/A,"`extension.valueString`: may contain additional demographic details, as seen in the sample data where they described the ""primary education level."
+18,30-Oct,Semantic,Demographics,Direct Analytical,Yes,22804,1065,No,Yes,No,Yes,N/A,
+19,30-Oct,Semantic,Demographics,Multi-Step Analytical,Yes,79560,1050,No,Yes,No,Yes,N/A,
+20,30-Oct,Semantic,Demographics,Advanced Analytical,Yes,65020,3658,No,Yes,No,Yes,N/A,
+21,30-Oct,Semantic,Diagnosis,General,Yes,35375,1418,No,Yes,No,Yes,N/A,
+22,30-Oct,Semantic,Diagnosis,Direct Factual,Yes,37569,998,No,Yes,No,Yes,N/A,
+23,30-Oct,Semantic,Diagnosis,Direct Analytical,Yes,47492,3208,No,Yes,Yes,Yes,N/A,"Assumed `author.display` explicitly indicates ""Father"" whenever the father is the author, and no other unspecified authors were involved."
+24,30-Oct,Semantic,Diagnosis,Multi-Step Analytical,Yes,46387,3608,No,Yes,Yes,Yes,N/A,"Yes — It was assumed that ""Mother"" in `author.display` represents PROMs filled out by the child\'s biological mother."
+25,30-Oct,Semantic,Diagnosis,Advanced Analytical,Yes,46153,1117,No,Yes,Yes,Yes,N/A,"Assumed `author.display` explicitly indicates ""Father"" whenever the father is the author, and no other unspecified authors were involved."
+1,31-Oct,Structural,Development,General,Yes,12597,981,No,N/A,No,N/A,N/A,
+2,31-Oct,Structural,Development,Direct Factual,No,21017,946,No,Yes,Yes,No,Semantic,"Assumed `value_type = 'V'` corresponds to the ""V-score"" for ""Vineland coping skills"" given its clear labeling. "
+3,31-Oct,Structural,Development,Direct Analytical,No,33629,1055,Yes,No,Yes,N/A,Structural,"Wrong assumption that all V-scores are in the communication domain. Yes — It is assumed that `value_type == 'V'` corresponds to the ""V-score"" in this context. Assumed communication domain across all V-scores."
+4,31-Oct,Structural,Development,Multi-Step Analytical,Yes,42406,1075,No,Yes,Yes,Yes,N/A,"Correct column names were assumed based on inspection after initial mismatches. Interpreted ""Vineland communication scale raw score"" as `value` for entries where `code_display = ""Vineland adaptive behavior scales""`. Similarly, interpreted PROM questionnaire to depressive complaints as `http://aumc.com/fhir/questionnaire/prom/depressieve_klachten`."
+5,31-Oct,Structural,Development,Advanced Analytical,No,48607,3138,Yes,No,Yes,N/A,Structural,Wrong assumption that all V-scores are in the social adaptive domain. Assumed `value_type = 'V'` corresponds to Vineland social adaptive V-score.
+6,31-Oct,Structural,PROMs,General,Yes,12872,3118,No,Yes,No,Yes,N/A,
+7,31-Oct,Structural,PROMs,Direct Factual,Yes,14599,1056,No,Yes,No,Yes,N/A,
+8,31-Oct,Structural,PROMs,Direct Analytical,Yes,60001,1123,No,Yes,Yes,N/A,N/A,Assuming column with SE and Tscores to be Tscore only
+9,31-Oct,Structural,PROMs,Multi-Step Analytical,No,146344,1090,Yes,Yes,Yes,No,Structural,Wrong interpretation of datetime field (from question)
+10,31-Oct,Structural,PROMs,Advanced Analytical,No,91794,982,Yes,No,Yes,N/A,Structural,"It is not possible to determine the chance of improving PROMs depressive complaints (T-scores) by 10 within six months, as the data does not contain the necessary T-score values to conduct this analysis. It is unclear whether T-scores exist or are located in another portion of the dataset. Further investigation into the source of T-score data or clarification on its location is needed.Without clear confirmation that T-scores are present in any column, it is not feasible to proceed with identifying improvements in T-scores. "
+11,31-Oct,Structural,Lab,General,Yes,13567,994,No,N/A,No,N/A,N/A,
+12,31-Oct,Structural,Lab,Direct Factual,No,36170,1127,Yes,Yes,Yes,No,Semantic,"Yes — Assumed that any measurement whose `Observation.text` contains ""k"" refers to potassium (e.g., ""lab_k_baseline"" or ""lab_k_followup_week12"")"
+13,31-Oct,Structural,Lab,Direct Analytical,No,59221,939,No,No,Yes,No,Semantic,Cannot find potassium measurements (k)
+14,31-Oct,Structural,Lab,Multi-Step Analytical,No,49089,3223,No,No,Yes,No,Semantic,Cannot find potassium measurements (k)
+15,31-Oct,Structural,Lab,Advanced Analytical,No,137313,1082,No,No,Yes,No,Semantic,Cannot find potassium measurements (k)
+16,31-Oct,Structural,Demographics,General,Yes,14680,973,No,N/A,No,N/A,N/A,
+17,31-Oct,Structural,Demographics,Direct Factual,No,13548,3163,No,Yes,Yes,No,Semantic,"Demographic variables found: `gender`, `birthDate`, possibly `extension.url` (if used for demographic details like education, nationality, etc.). Assumed demographic variables can be directly identified from column names without additional semantic information (e.g., not counting `extension.url` since its content wasn\'t examined). "
+18,31-Oct,Structural,Demographics,Direct Analytical,Yes,26049,3218,No,Yes,No,N/A,N/A,
+19,31-Oct,Structural,Demographics,Multi-Step Analytical,No,28853,9399,Yes,No,Yes,N/A,Structural,Cannot find right assumption on raw adaptive score
+20,31-Oct,Structural,Demographics,Advanced Analytical,Yes,40994,942,No ,Yes,Yes,Yes,N/A,Yes — Interpreted `gender = 0` as female and `gender = 1` as male. 
+21,31-Oct,Structural,Diagnosis,General,Yes,21779,3092,No,Yes,Yes,Yes,N/A,"Assumed that a patient ID is consistently used across different dataframes, where patient identifiers are found under fields such as `id`, `patient.reference`, and `subject.reference`"
+22,31-Oct,Structural,Diagnosis,Direct Factual,No,26801,3156,No,Yes,Yes,No,Semantic," It was assumed that ""Autism spectrum disorder,"" ""Pervasive developmental disorder, unspecified,"" and ""PDD-NOS"" are clinically categorized as types of autism. It was assumed that ""Autism spectrum disorder,"" ""Pervasive developmental disorder, unspecified,"" and ""PDD-NOS"" are clinically categorized as types of autism. Not picking up terms like ASD."
+23,31-Oct,Structural,Diagnosis,Direct Analytical,No,50578,3621,No,Yes,Yes,No,Semantic,"Yes — Assumed ""father-only"" means that no other `author.display` besides ""Father"" is associated with the patient's PROM entries. "
+24,31-Oct,Structural,Diagnosis,Multi-Step Analytical,No,60502,3425,No,Yes,Yes,No,Semantic,"Yes — Assumed 'Autism spectrum disorder' entry includes all cases of autism explicitly labeled in this dataset.  *Filter PROMs filled only by the mother**, using the `author.display` column in the PROMs DataFrame where the value is ""Mother""."
+25,31-Oct,Structural,Diagnosis,Advanced Analytical,No,65859,3162,No,Yes,Yes,No,Semantic,Yes — Assumed 'Autism spectrum disorder' entry includes all cases of autism explicitly labeled in this dataset. Selecting only prompts filled out by father only.
+1,31-Oct,Raw,Development,General,Yes,80293,2205,No,N/A,No,N/A,N/A,
+2,31-Oct,Raw,Development,Direct Factual,No,243787,1831,No,Yes,Yes,No,Semantic,Assuming the wrong field for coping skills
+3,31-Oct,Raw,Development,Direct Analytical,No,80829,2142,No,Yes,Yes,N/A,Computational/Agentic,"Due to computational limitations, assuming df.head() - first five rows only"
+4,31-Oct,Raw,Development,Multi-Step Analytical,Yes,252264,2120,No ,Yes,Yes,Yes,N/A,Assuming VL_com_RT_ruw_2
+5,31-Oct,Raw,Development,Advanced Analytical,No,305055,2684,Yes,No,Yes,N/A,Structural,"Assumed no duplicate patients exist within each dataset. I interpreted ""social adaptive (AV)"" as corresponding to the `VL_soc_AV_gsv_2` column in the **VL** dataset. Used `VL_soc_AV_gsv_2` as the Vineland social adaptive score field. "
+6,31-Oct,Raw,PROMs,General,Yes,81156,3300,No,Yes,Yes,Yes,N/A,"Assumed the distinct questionnaire focus is indicated by the column names used in the datasets (e.g., angst for anxiety, depressieve for depression)."
+7,31-Oct,Raw,PROMs,Direct Factual,Yes,126929,1985,No,Yes,No,Yes,N/A,
+8,31-Oct,Raw,PROMs,Direct Analytical,Yes,123247,3175,No,Yes,Yes,Yes,N/A,
+9,31-Oct,Raw,PROMs,Multi-Step Analytical,No,556933,1955,Yes,No,No,No,Structural,"Timefield interpretation going wrong, many different ways of datetime reported. Despite persistent attempts to resolve the issue systematically in Python, the repeated `NameError` suggests that there may be environmental constraints or scoped variable conflicts impacting the execution. A manual analysis of the problem or environment-level investigation could resolve this.\n\nHowever, given detailed data availability:\n- DataFrame `df6` corresponds to `PROM_depressieve_klachten`.\n- DataFrame `df1` corresponds to demographics.\nThe theoretical workflow for computing the percentage is already provided above.\n\nFor proper implementation, this issue requires technical support or resetting the execution environment to clear existing errors. Let me know how you'd like to proceed.""}"
+10,31-Oct,Raw,PROMs,Advanced Analytical,No,410961,1795,Yes,No,Yes,N/A,Structural,Timefield interpretation (mm-yy different) and mismatched variable names for patient id. Assuming wrong column (VL_com_RT_gsv_2) as communication score and wrong timesformat input
+11,31-Oct,Raw,Lab,General,Yes,80838,1991,No,N/A,No,N/A,N/A,
+12,31-Oct,Raw,Lab,Direct Factual,No,226999,2019,Yes,Yes,Yes,No,Semantic,Assumed no other data source contained potassium measurements. Assuming urine potassium as blood potassium
+13,31-Oct,Raw,Lab,Direct Analytical,No,160969,2213,Yes,No,Yes,N/A,Structural,Only taking lab_k_baseline as column
+14,31-Oct,Raw,Lab,Multi-Step Analytical,No,518976,3212,Yes,No,Yes,N/A,Structural,"Timefield interpretation going wrong, many different ways of datetime reported"
+15,31-Oct,Raw,Lab,Advanced Analytical,No,651976,1815,Yes,No,Yes,N/A,Structural,"It appears that the execution environment consistently fails to recognize the `datetime` library, even after multiple attempts to import it. Only taking lab_k_baseline as column and datetime misassumptionns"
+16,31-Oct,Raw,Demographics,General,Yes,202736,3265,No,N/A,No,N/A,N/A,
+17,31-Oct,Raw,Demographics,Direct Factual,No,162073,2049,Yes,No,Yes,N/A,Structural,"Made assumptions per ['Incl_age', 'dem_birth_month', 'dem_birth_year', 'dem_sex', 'dem_sex_other', 'dem_gender', 'dem_gender_other']"
+18,31-Oct,Raw,Demographics,Direct Analytical,No,121712,3099,Yes,Yes,No,N/A,Computational/Agentic,"Due to computational limitations, assuming df.head() - first five rows only"
+19,31-Oct,Raw,Demographics,Multi-Step Analytical,No,646772,3465,Yes,No,Yes,N/A,Structural,"Gender-related information (`dem_sex`)** was not explicitly found in any of the datasets.\n\nSince gender data is essential and it's not available, I cannot proceed with the analysis without making unreasonable assumptions. Cannot find gender-related information 'dem_sex'"
+20,31-Oct,Raw,Demographics,Advanced Analytical,No,288102,1836,Yes,No,Yes,N/A,Structural,"The `df` DataFrame does not explicitly contain any columns for participant gender.  The gender information might not be adequately represented in the provided dataframes, and therefore I cannot compute the required percentage of females and the most common age of males at this time."
+21,31-Oct,Raw,Diagnosis,General,Yes,80883,2175,No,Yes,Yes,Yes,N/A,Considered Participant Id as distinct patients
+22,31-Oct,Raw,Diagnosis,Direct Factual,No,166320,3271,No,Yes,Yes,No,Semantic,"Yes — Assumed all variations including 'autism', 'ASD', 'ASS', and similar phrases as indicative of autism spectrum disorder."
+23,31-Oct,Raw,Diagnosis,Direct Analytical,No,163854,3240,No,Yes,Yes,No,Semantic,"ASSUMED that ""Father-only"" means participants with PROMs exclusively filled by ""Father"" without other invullers being listed. "
+24,31-Oct,Raw,Diagnosis,Multi-Step Analytical,No,287671,2093,No,Yes,Yes,No,Semantic,"Yes — Assumed \'Neuropsy_diag\' containing \'autism\' indicates children with autism, and promoters labeled ""Mother"" in \'PROM_angst_Invuller\' represent relevant entries.'}"
+25,31-Oct,Raw,Diagnosis,Advanced Analytical,No,344935,2012,Yes,No,Yes,N/A,Structural,"The issue with mismatched or missing column names persists across attempts. Even after careful inspection of dataframes and available columns, certain fields expected for analysis (e.g., `PROM_depressieve_klachten_Invuller` or `SRS_Invuller`) either do not exist, are empty, or cannot be accessed correctly."
