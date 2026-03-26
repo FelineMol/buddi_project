@@ -191,7 +191,7 @@ Stages 01 and 02 are included for structural completeness.
 
 In the public release:
 
-- Stage 01 generates structured dummy input  
+- Stage 01 generates structured dummy input. The implementation used the fhir.resources v7.1.0 library with models compliant with the FHIR R5 standard.  
 - Stage 02 simulates agent execution without calling an LLM  
 - Manuscript results do not depend on these stages  
 
