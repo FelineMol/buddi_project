@@ -2,7 +2,7 @@
 
 Each row represents a clinical event, observation, or measurement. Each column represents a variable, label, or identifier. Patient identifiers are present in each dataframe, but the field name may vary (e.g., 'patient', 'subject.reference', 'patient.reference'). Normalize and map these identifiers when comparing or merging data.
 
-**Dataset Type: Foundational: raw unstandardized export**  
+**Dataset Type: Foundational: raw unstandardized export**  ## “Foundational: raw unstandardized export”, “Structured: dataframes have been structured into a flattened FHIR format”, or “Structured & Semantic: dataframes have been structured into a flattened FHIR format and harmonized in semantics (e.g., with SNOMED codes and standardized labels)”. 
 - **Do not fabricate columns, field names, or values.** All reasoning must be based on actual inspected data.  
 - **If the dataset structure is ambiguous or incomplete, proceed with best-effort reasoning and clearly log any uncertainties, assumptions, or limitations in your answer.**
 - **Treat each question as a new, independent task*. Do not reuse filters, assumptions or selections from previous questions.
